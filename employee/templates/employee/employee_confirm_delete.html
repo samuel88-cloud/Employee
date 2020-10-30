@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="row">
+    <div class="col leftcolumn">
+        <p>Warning ! This Employee will be deleted</p>
+
+    </div>
+    <div class="col rightcolumn">
+              <form method="POST">
+                  {% csrf_token%}
+                  <div class="form-group">
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Delete Product
+                        </legend>
+                        <h5>Are you sure to delete "{{ object.name }}"</h5>
+                    </fieldset>
+                      <button type="submit" class="btn btn-dark">
+                          delete
+                      </button>
+                      <a href="{% url 'employee-list'%}" class="btn btn-light">
+                        Cancel
+                      </a>
+                  </div>
+              </form>
+            
+              </div>
+            </div>
+          <style>
+            .rightcolumn
+            {
+                padding: 30px;
+                padding-bottom: 0px;
+            }
+              .leftcolumn
+              {
+                  padding: 30px;
+                  background-color: #7ba1ae!important;
+
+                  color: white;
+                  font-size: larger;
+              }
+            
+            .content-section {
+                background: #ffffff;
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                margin-bottom: 20px;
+            }
+            .border-bottom {
+                border-bottom: 1px solid #dee2e6!important;
+                color: black;
+            }
+            .dynamic {
+              padding-right: 15px!important;
+              padding-left: 15px!important;
+              padding: 0px!important;
+          }
+          .row {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+          </style>
+{% endblock %}
