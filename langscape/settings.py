@@ -26,7 +26,7 @@ SECRET_KEY = ')936zx&vmp-u3+sp@d#n@(=^die$@a+fwihr#j)svy1ma=fy-c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://langscape-employee.herokuapp.com/']
 
 
 # Application definition
