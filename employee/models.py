@@ -14,10 +14,18 @@ class Employee(models.Model):
         ('level 9', 'level 9'),
         ('level 10', 'level 10'),
     )
-    name=models.CharField(max_length=100)
+
+    salarychoices=(
+        ('100.0', '100.0'),
+        ('200.0', '200.0'),
+        ('300.0', '300.0'),
+        ('400.0', '400.0'),
+    )
+
+    name=models.CharField(max_length=100,null=True)
     email=models.EmailField()
     age=models.IntegerField()
-    salary=models.FloatField()
+    salary=models.CharField(max_length=300,choices = salarychoices)
     position = models.CharField(max_length=300, choices = CHOICES)
     address=models.CharField(max_length=500)
     

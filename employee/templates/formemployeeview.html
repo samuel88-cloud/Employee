@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div  class="title">
+    <h2>Employee Detail</h2>
+</div>
+
+<form method="POST" class="main">
+  {% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <div id="div_id_name" class="form-group">
+                    <label for="id_name" class=" requiredField">
+                        Name<span class="asteriskField">*</span>
+                    </label>
+                    <div class="">
+                        <input type="text" value="{{name}}" name="name" maxlength="100" class="textinput textInput form-control" required="" id="id_name" >
+                    </div>   
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <div id="div_id_email" class="form-group">
+                
+                    <label for="id_email" class=" requiredField">
+                        Email<span class="asteriskField">*</span>
+                    </label>
+                    <div class="">
+                        <input type="email" name="email" maxlength="254" class="emailinput form-control" required="" id="id_email" value="{{email}}" >
+                    </div>
+            </div>
+        </div>
+        <div class="form-group col-md-2">
+        <div id="div_id_age" class="form-group">
+            
+                <label for="id_age" class=" requiredField">
+                    Age<span class="asteriskField">*</span>
+                </label>
+                <div class="">
+                    <input type="number" name="age" class="numberinput form-control" required="" id="id_age" value="{{age}}" >  
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        
+            <div id="div_id_position" class="form-group">
+                    <label for="id_position" class=" requiredField">
+                        Position<span class="asteriskField">*</span>
+                    </label>
+                    <div class="">
+                        <select name="position" class="select form-control" required="" id="id_position" >
+                        <option value="" selected="">---</option>
+                        <option value="level 1">level 1</option>
+                        <option value="level 2">level 2</option>
+                        <option value="level 3">level 3</option>
+                        <option value="level 4">level 4</option>
+                        <option value="level 5">level 5</option>
+                        <option value="level 6">level 6</option>
+                        <option value="level 7">level 7</option>
+                        <option value="level 8">level 8</option>
+                        <option value="level 9">level 9</option>
+                        <option value="level 10">level 10</option>
+                        </select>
+                    </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+                <div id="div_id_salary" class="form-group">
+            
+                    <label for="id_salary" class=" requiredField">
+                        Salary<span class="asteriskField">*</span>
+                    </label>
+                
+                    <div class="">
+                      <select name="salary" class="select form-control" required="" id="id_salary" >
+                      <option value="{{salary}}" selected="">{{salary}}</option>
+                      <option value="100.0">100.0</option>
+                      <option value="200.0">200.0</option>
+                      <option value="300.0">300.0</option>
+                      <option value="400.0">400.0</option>
+              
+                      </select>
+                  </div>
+                </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div id="div_id_address" class="form-group">
+            
+                <label for="id_address" class=" requiredField">
+                    Address<span class="asteriskField">*</span>
+                </label>
+            
+                <div class="">
+                    <input type="text" name="address" maxlength="500" class="textinput textInput form-control" required="" id="id_address" value="{{address}}" >
+                </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <style>
+  </style>
+{% endblock %}
+
+
+
+
+
+
+
